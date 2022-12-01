@@ -6,6 +6,7 @@ import com.rara.back_office.dto.CourseResponseDto;
 import com.rara.back_office.dto.MessageResponseDto;
 import com.rara.back_office.service.CourseService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,6 +40,11 @@ public class CourseController {
 	@PutMapping("/courses/{id}")
 	public CourseResponseDto updateCourse(@PathVariable Long id, @RequestBody CourseRequestDto requestDto) {
 		return courseService.updateCourse(id, requestDto);
+	}
+
+	@DeleteMapping("/courses/{id}")
+	public MessageResponseDto deleteCourse(@PathVariable Long id) {
+		return courseService.deleteCourse(id);
 	}
 
 }

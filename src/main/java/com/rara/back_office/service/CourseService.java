@@ -18,4 +18,7 @@ public interface CourseService {
 
 	//강의 수정
 	CourseResponseDto updateCourse(Long id, CourseRequestDto requestDto);
+
+	//강의 삭제
+	MessageResponseDto deleteCourse(Long id);
 }

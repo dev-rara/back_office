@@ -58,4 +58,13 @@ public class CourseServiceImpl implements CourseService {
 
 		return new CourseResponseDto(course);
 	}
+
+	@Override
+	public MessageResponseDto deleteCourse(Long id) {
+		Course course = courseRepository.findById(id).orElseThrow(
+			() -> new IllegalArgumentException("강의가 존재하지 않습니다.")
+		);
+		courseRepository.delete(course);
+		return new MessageResponseDto("Success", HttpStatus.OK.value());
+	}
 }
