@@ -31,7 +31,7 @@ public class CourseController {
 		return courseService.getCourses();
 	}
 
-	@GetMapping("/courses")
+	@GetMapping("/course")
 	public CourseResponseDto getCourse(@RequestParam Long id) {
 		return courseService.getCourse(id);
 	}

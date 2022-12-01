@@ -39,7 +39,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public CourseResponseDto getCourse(Long id) {
 		Course course = courseRepository.findById(id).orElseThrow(
 			() -> new IllegalArgumentException("강의가 존재하지 않습니다.")
