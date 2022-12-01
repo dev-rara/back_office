@@ -46,4 +46,16 @@ public class CourseServiceImpl implements CourseService {
 		);
 		return new CourseResponseDto(course);
 	}
+
+	@Override
+	@Transactional
+	public CourseResponseDto updateCourse(Long id, CourseRequestDto requestDto) {
+		Course course = courseRepository.findById(id).orElseThrow(
+			() -> new IllegalArgumentException("강의가 존재하지 않습니다.")
+		);
+		course.update(requestDto);
+		courseRepository.save(course);
+
+		return new CourseResponseDto(course);
+	}
 }

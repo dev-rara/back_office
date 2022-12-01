@@ -7,7 +7,9 @@ import com.rara.back_office.dto.MessageResponseDto;
 import com.rara.back_office.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,4 +35,10 @@ public class CourseController {
 	public CourseResponseDto getCourse(@RequestParam Long id) {
 		return courseService.getCourse(id);
 	}
+
+	@PutMapping("/courses/{id}")
+	public CourseResponseDto updateCourse(@PathVariable Long id, @RequestBody CourseRequestDto requestDto) {
+		return courseService.updateCourse(id, requestDto);
+	}
+
 }

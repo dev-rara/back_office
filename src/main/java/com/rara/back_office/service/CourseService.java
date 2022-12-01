@@ -13,5 +13,9 @@ public interface CourseService {
 	//전체 강의 목록 조회
 	CourseListResponseDto getCourses();
 
+	//선택한 강의 조회
 	CourseResponseDto getCourse(Long id);
+
+	//강의 수정
+	CourseResponseDto updateCourse(Long id, CourseRequestDto requestDto);
 }

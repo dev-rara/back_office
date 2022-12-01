@@ -27,4 +27,10 @@ public class Course extends Timestamped{
 		this.instructor = requestDto.getInstructor();
 		this.cost = requestDto.getCost();
 	}
+
+	public void update(CourseRequestDto requestDto) {
+		this.title = requestDto.getTitle();
+		this.instructor = requestDto.getInstructor();
+		this.cost = requestDto.getCost();
+	}
 }
