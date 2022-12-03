@@ -4,6 +4,7 @@
 ## 🛠️Tech Stacks
 * Spring Boot
 * Spring Data JPA
+* Lombok
 * H2 Database<br>
 
 ## 💡구현 기능
